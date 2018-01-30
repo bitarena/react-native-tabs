@@ -2,16 +2,23 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
+import Icon from 'react-native-fa-icons';
 import ScarletScreen from './src/ScarletScreen';
 import GrayScreen from './src/GrayScreen';
 import GoldScreen from './src/GoldScreen';
 
-const TabIcon = ({ selected, title }) => {
+// const TabIcon = ({ selected, title }) => {
+//   return (
+//     <Text style={{color: selected ? 'red' :'black'}}>{title}</Text>
+//   );
+// };
+
+const TabIcon = (selected, title) => {
   return (
-    <Text style={{color: selected ? 'red' :'black'}}>{title}</Text>
+    <Icon name='search' style={{ fontSize: 30, }} />
   );
 };
 
@@ -25,6 +32,7 @@ const App = () => {
           tabBarStyle={{ backgroundColor: '#FFFFFF' }}
           tabBarPosition={'bottom'}
           hideNavBar
+          showLabel={false}
         >
           <Scene
             key="osu" 
